@@ -1,9 +1,10 @@
-import React from "react";
-import MetricCard from "./MetricCard";
-import ChartCard from "./ChartCard";
-import TopPostCard from "./TopPostCard";
-import HashtagBadge from "./HashtagBadge";
-import BestTimeRow from "./BestTimeRow";
+import BestTimeRow from "@/components/Instagram/BestTimeRow";
+// import ChartCard from "@/components/Instagram/ChartCard";
+import HashtagBadge from "@/components/Instagram/HashtagBadge";
+import MetricCard from "@/components/Instagram/MetricCard";
+import TopPostCard from "@/components/Instagram/TopPostCard";
+import { Camera, Image, VideoIcon } from "lucide-react";
+import { FaEye, FaHeart, FaPlayCircle, FaUser } from "react-icons/fa";
 
 export default function InstagramAnalytics() {
   const metrics = [
@@ -11,8 +12,7 @@ export default function InstagramAnalytics() {
       title: "Seguidores",
       value: "45.2K",
       change: "+567 esta semana",
-      icon: "fas fa-users",
-      iconColor: "text-pink-400",
+      icon: <FaUser className="text-pink-400" size={24} />,
       borderColor: "border-pink-500",
       bgIcon: "bg-pink-900",
       changeColor: "text-green-400",
@@ -21,8 +21,7 @@ export default function InstagramAnalytics() {
       title: "Engajamento",
       value: "5.8%",
       change: "+0.3% este mês",
-      icon: "fas fa-heart",
-      iconColor: "text-purple-400",
+      icon: <FaHeart className="text-purple-400" size={24} />,
       borderColor: "border-purple-500",
       bgIcon: "bg-purple-900",
       changeColor: "text-green-400",
@@ -31,8 +30,7 @@ export default function InstagramAnalytics() {
       title: "Alcance Médio",
       value: "28.5K",
       change: "Por post",
-      icon: "fas fa-eye",
-      iconColor: "text-blue-400",
+      icon: <FaEye className="text-blue-400" size={24} />,
       borderColor: "border-blue-500",
       bgIcon: "bg-blue-900",
       changeColor: "text-yellow-400",
@@ -41,8 +39,7 @@ export default function InstagramAnalytics() {
       title: "Stories Views",
       value: "12.3K",
       change: "Média diária",
-      icon: "fas fa-play-circle",
-      iconColor: "text-green-400",
+      icon: <FaPlayCircle className="text-green-400" size={24} />,
       borderColor: "border-green-500",
       bgIcon: "bg-green-900",
       changeColor: "text-green-400",
@@ -52,7 +49,7 @@ export default function InstagramAnalytics() {
   const posts = [
     {
       title: "Pôr do sol na praia do Baixio",
-      icon: "fas fa-image",
+      icon: <Image size={50} />,
       bgGradient: "from-pink-500 to-purple-600",
       likes: "2.3K",
       comments: 89,
@@ -60,7 +57,7 @@ export default function InstagramAnalytics() {
     },
     {
       title: "Tour gastronômico - Reels",
-      icon: "fas fa-video",
+      icon: <VideoIcon size={50} />,
       bgGradient: "from-blue-500 to-teal-600",
       likes: "4.1K",
       comments: 156,
@@ -68,7 +65,7 @@ export default function InstagramAnalytics() {
     },
     {
       title: "Dicas de hospedagem",
-      icon: "fas fa-camera",
+      icon: <Camera size={50} />,
       bgGradient: "from-yellow-500 to-orange-600",
       likes: "1.8K",
       comments: 67,
@@ -86,7 +83,7 @@ export default function InstagramAnalytics() {
   ];
 
   return (
-    <section className="section">
+    <section className="section max-w-6xl mx-auto mt-6">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
           <i className="fab fa-instagram text-pink-500 mr-3"></i>
@@ -101,10 +98,10 @@ export default function InstagramAnalytics() {
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <ChartCard title="Crescimento de Seguidores" chartId="instagramFollowersChart" />
         <ChartCard title="Engajamento por Tipo de Post" chartId="instagramEngagementChart" />
-      </div>
+      </div> */}
 
       <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 mb-6">
         <h3 className="text-lg font-bold text-white mb-4">Posts com Melhor Performance</h3>

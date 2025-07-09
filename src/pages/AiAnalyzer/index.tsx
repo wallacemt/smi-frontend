@@ -1,6 +1,6 @@
-import { AiConnectionTest } from "@/components/AiConnectionTest";
-import { ComparingAnalyzer } from "@/components/ComparingAnallyzer";
-import { ProfileAnalyser } from "@/components/ProfieAnalyser";
+import { AiConnectionTest } from "@/components/AiAnalyzer/AiConnectionTest";
+import { ComparingAnalyzer } from "@/components/AiAnalyzer/ComparingAnallyzer";
+import { ProfileAnalyser } from "@/components/AiAnalyzer/ProfieAnalyser";
 import { Lightbulb } from "lucide-react";
 import { FaRobot } from "react-icons/fa";
 

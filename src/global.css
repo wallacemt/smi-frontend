@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -38,7 +40,13 @@
   --sidebar-ring: oklch(0.708 0 0);
   --principalColor: #111827;
   --butonsColor: #a855f7;
+  --fontPrincial: "Montserrat", sans-serif;
 }
+
+body {
+  font-family: var(--fontPrincial);
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -76,6 +84,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-buttonPrincipal: var(--butonsColor);
+  --font-principal: var(--fontPrincial);
 }
 
 .dark {

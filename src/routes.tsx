@@ -5,6 +5,7 @@ import DashBoard from "./pages/Dashboard";
 import Layout from "./layout";
 import AiAnalyzer from "./pages/AiAnalyzer";
 import { ErorNotFound } from "./pages/Error/404";
+import InstagramAnalytics from "./pages/Instagram";
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,14 @@ export default function AppRouter() {
           element={
             <Layout>
               <AiAnalyzer />
+            </Layout>
+          }
+        />
+        <Route
+          path="/instagram"
+          element={
+            <Layout>
+              <InstagramAnalytics />
             </Layout>
           }
         />

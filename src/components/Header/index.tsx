@@ -33,16 +33,13 @@ const Header = () => {
 
   return (
     <>
-      {/* Top Header */}
-      <header className="bg-black text-white shadow-lg border-b border-blue-500">
-        <div className="flex items-center justify-between px-4 py-3 md:px-6">
+      <header className="bg-black text-white shadow-lg border-b border-blue-500  font-principal">
+        <div className="flex items-center justify-between px-4 py-3 md:px-24">
           {/* Logo */}
           <div className="flex items-center">
-            <FaRobot className="text-2xl mr-2 text-purple-400" />
-            <h1 className="text-xl font-bold">BaixioTurismo</h1>
-            <span className="ml-2 text-sm text-gray-400 hidden sm:inline-block animate-pulse">
-              <span className="font-bold">AI</span> Social Analytics
-            </span>
+            <img src="./logo.png" alt="Logo" className="w-10 h-10  animate-pulse" />
+            <h1 className="text-xl font-bold">Baixio Turismo <span className="font-bold text-xs absolute text-red-600">AI</span></h1>
+          
           </div>
 
           {/* Mobile menu toggle */}
