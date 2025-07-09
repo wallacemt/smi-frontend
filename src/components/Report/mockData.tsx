@@ -1,5 +1,14 @@
 import type { MockData } from "@/types/reports";
-import { FaCamera, FaDollarSign, FaFacebook, FaHeart, FaInstagram, FaTiktok, FaUsers, FaYoutube } from "react-icons/fa";
+import {
+  FaCamera,
+  FaDollarSign,
+  FaFacebook,
+  FaHeart,
+  FaInstagram,
+  FaTiktok,
+  FaUsers,
+  FaYoutube,
+} from "react-icons/fa";
 import { FaChartSimple } from "react-icons/fa6";
 import { HiOutlineTrendingUp } from "react-icons/hi";
 export const mockData: MockData = {
@@ -23,10 +32,30 @@ export const mockData: MockData = {
     { value: "views", label: "Visualizações" },
   ],
   platformGrowth: [
-    { name: "Instagram", icon: "instagram", followers: "45.2K seguidores", growth: "+12.5%" },
-    { name: "Facebook", icon: "facebook", followers: "38.7K curtidas", growth: "+6.8%" },
-    { name: "TikTok", icon: "tiktok", followers: "32.8K seguidores", growth: "+24.1%" },
-    { name: "YouTube", icon: "youtube", followers: "10.8K inscritos", growth: "+15.3%" },
+    {
+      name: "Instagram",
+      icon: <FaInstagram size={20} className="text-purple-950" />,
+      followers: "45.2K seguidores",
+      growth: "+12.5%",
+    },
+    {
+      name: "Facebook",
+      icon: <FaFacebook className="text-blue-500" size={20} />,
+      followers: "38.7K curtidas",
+      growth: "+6.8%",
+    },
+    {
+      name: "TikTok",
+      icon: <FaTiktok size={20} className="text-amber-800" />,
+      followers: "32.8K seguidores",
+      growth: "+24.1%",
+    },
+    {
+      name: "YouTube",
+      icon: <FaYoutube size={20} className="text-red-500" />,
+      followers: "10.8K inscritos",
+      growth: "+15.3%",
+    },
   ],
   contentAnalysis: {
     types: [
@@ -43,21 +72,66 @@ export const mockData: MockData = {
       { name: "Hospedagem", growth: "+8%", growthColor: "text-yellow-400" },
     ],
     peakHours: [
-      { period: "09:00 - 11:00", engagement: "Alto", engagementColor: "text-white" },
-      { period: "12:00 - 14:00", engagement: "Muito Alto", engagementColor: "text-green-400" },
-      { period: "18:00 - 20:00", engagement: "Alto", engagementColor: "text-white" },
-      { period: "21:00 - 23:00", engagement: "Muito Alto", engagementColor: "text-green-400" },
+      {
+        period: "09:00 - 11:00",
+        engagement: "Alto",
+        engagementColor: "text-white",
+      },
+      {
+        period: "12:00 - 14:00",
+        engagement: "Muito Alto",
+        engagementColor: "text-green-400",
+      },
+      {
+        period: "18:00 - 20:00",
+        engagement: "Alto",
+        engagementColor: "text-white",
+      },
+      {
+        period: "21:00 - 23:00",
+        engagement: "Muito Alto",
+        engagementColor: "text-green-400",
+      },
     ],
   },
   roiByPlatform: [
-    { name: "Instagram", icon: <FaInstagram size={20}/>, roi: "R$ 4.50", description: "por R$ 1 investido" },
-    { name: "Facebook", icon: <FaFacebook className="text-blue-500" size={20}/>, roi: "R$ 3.20", description: "por R$ 1 investido" },
-    { name: "TikTok", icon: <FaTiktok/>, roi: "R$ 5.80", description: "por R$ 1 investido" },
-    { name: "YouTube", icon: <FaYoutube/>, roi: "R$ 2.90", description: "por R$ 1 investido" },
+    {
+      name: "Instagram",
+      icon: <FaInstagram size={20} className="text-purple-950" />,
+      roi: "R$ 4.50",
+      description: "por R$ 1 investido",
+    },
+    {
+      name: "Facebook",
+      icon: <FaFacebook className="text-blue-500" size={20} />,
+      roi: "R$ 3.20",
+      description: "por R$ 1 investido",
+    },
+    {
+      name: "TikTok",
+      icon: <FaTiktok size={20} className="text-amber-800" />,
+      roi: "R$ 5.80",
+      description: "por R$ 1 investido",
+    },
+    {
+      name: "YouTube",
+      icon: <FaYoutube size={20} className="text-red-500" />,
+      roi: "R$ 2.90",
+      description: "por R$ 1 investido",
+    },
   ],
   conversionsLeads: {
-    conversionRate: { label: "Taxa de Conversão Geral", value: "3.8%", percent: 38, colorClass: "bg-green-500" },
-    leadsGenerated: { label: "Leads Gerados", value: "1,247", note: "Este mês: +18% vs mês anterior" },
+    conversionRate: {
+      label: "Taxa de Conversão Geral",
+      value: "3.8%",
+      percent: 38,
+      colorClass: "bg-green-500",
+    },
+    leadsGenerated: {
+      label: "Leads Gerados",
+      value: "1,247",
+      note: "Este mês: +18% vs mês anterior",
+    },
     costPerLead: {
       label: "Custo por Lead",
       value: "R$ 12.50",

@@ -1,3 +1,5 @@
+import { FaClock, FaFile, FaFileCsv, FaFileExcel } from "react-icons/fa6";
+
 export const ReportExportMethods = () => {
   const exportReport = (format: string) => {
     console.log(`Exportando relatório para o formato ${format}`);
@@ -18,7 +20,7 @@ export const ReportExportMethods = () => {
   }) => (
     <button
       onClick={onClick}
-      className={`bg-gray-800 hover:bg-gray-900 text-white px-4 py-3 rounded-lg transition-colors flex items-center justify-center ${className}`}
+      className={` text-white px-4 py-3 rounded-lg transition-colors flex items-center justify-center ${className}`}
     >
       {children}
     </button>
@@ -28,20 +30,32 @@ export const ReportExportMethods = () => {
     <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
       <h3 className="text-lg font-bold text-white mb-4">Exportar Relatórios</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        <ExportButton onClick={() => exportReport("pdf")} className="bg-red-600 hover:bg-red-700">
-          <i className="fas fa-file-pdf mr-2"></i>
+        <ExportButton
+          onClick={() => exportReport("pdf")}
+          className="bg-red-600 hover:bg-red-700"
+        >
+          <FaFile className="mr-2" />
           Exportar PDF
         </ExportButton>
-        <ExportButton onClick={() => exportReport("excel")} className="bg-green-600 hover:bg-green-700">
-          <i className="fas fa-file-excel mr-2"></i>
+        <ExportButton
+          onClick={() => exportReport("excel")}
+          className="bg-green-600 hover:bg-green-700"
+        >
+          <FaFileExcel className="mr-2" />
           Exportar Excel
         </ExportButton>
-        <ExportButton onClick={() => exportReport("csv")} className="bg-blue-600 hover:bg-blue-700">
-          <i className="fas fa-file-csv mr-2"></i>
+        <ExportButton
+          onClick={() => exportReport("csv")}
+          className="bg-blue-800 hover:bg-blue-900"
+        >
+          <FaFileCsv className="mr-2" />
           Exportar CSV
         </ExportButton>
-        <ExportButton onClick={scheduleReport} className="bg-purple-600 hover:bg-purple-700">
-          <i className="fas fa-clock mr-2"></i>
+        <ExportButton
+          onClick={scheduleReport}
+          className="bg-purple-600 hover:bg-purple-700"
+        >
+          <FaClock className="mr-2" />
           Agendar Envio
         </ExportButton>
       </div>

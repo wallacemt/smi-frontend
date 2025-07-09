@@ -32,7 +32,9 @@ export default function RelatorioMarketing() {
       <ReportFilters onGenerate={handleGenerateReport} />
 
       <section className="mb-10">
-        <h3 className="text-xl font-bold mb-4">Crescimento das Plataformas</h3>
+        <h3 className="text-xl font-bold mb-4 text-white">
+          Crescimento das Plataformas
+        </h3>
         <PlatformGrowthList data={mockData.platformGrowth} />
       </section>
 

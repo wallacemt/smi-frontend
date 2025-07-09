@@ -1,7 +1,3 @@
-// types.ts
-
-import type { ReactNode } from "react";
-
 export interface ReportPeriod {
   value: string;
   label: string;
@@ -22,7 +18,7 @@ export interface MetricOption {
 
 export interface PlatformGrowthItem {
   name: string;
-  icon: "instagram" | "facebook" | "tiktok" | "youtube";
+  icon: React.ReactNode;
   followers: string;
   growth: string; // e.g. "+12.5%"
 }
