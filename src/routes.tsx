@@ -7,6 +7,7 @@ import AiAnalyzer from "./pages/AiAnalyzer";
 import { ErorNotFound } from "./pages/Error/404";
 import InstagramAnalytics from "./pages/Instagram";
 import FacebookAnalytics from "./pages/Facebook";
+import TikTokAnalytics from "./pages/TikTok";
 
 export default function AppRouter() {
   return (
@@ -41,6 +42,14 @@ export default function AppRouter() {
           element={
             <Layout>
               <FacebookAnalytics />
+            </Layout>
+          }
+        />
+        <Route
+          path="/tiktok"
+          element={
+            <Layout>
+              <TikTokAnalytics />
             </Layout>
           }
         />
