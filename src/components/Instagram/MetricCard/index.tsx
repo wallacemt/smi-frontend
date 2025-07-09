@@ -8,7 +8,7 @@ interface MetricCardProps {
   changeColor: string;
 }
 const MetricCard = ({ title, value, change, icon, borderColor, bgIcon, changeColor }: MetricCardProps) => (
-  <div className={`bg-gray-800 rounded-lg shadow-lg p-6 border-l-4 ${borderColor}`}>
+  <div className={`bg-gray-800 rounded-lg shadow-lg p-6 border-l-4 ${borderColor} card-indicator`}>
     <div className="flex justify-between">
       <div>
         <p className="text-sm font-medium text-gray-400">{title}</p>

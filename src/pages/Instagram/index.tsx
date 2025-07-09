@@ -4,7 +4,7 @@ import HashtagBadge from "@/components/Instagram/HashtagBadge";
 import MetricCard from "@/components/Instagram/MetricCard";
 import TopPostCard from "@/components/Instagram/TopPostCard";
 import { Camera, Image, VideoIcon } from "lucide-react";
-import { FaEye, FaHeart, FaPlayCircle, FaUser } from "react-icons/fa";
+import { FaEye, FaHeart, FaInstagram, FaPlayCircle, FaUser } from "react-icons/fa";
 
 export default function InstagramAnalytics() {
   const metrics = [
@@ -86,7 +86,7 @@ export default function InstagramAnalytics() {
     <section className="section max-w-6xl mx-auto mt-6">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
-          <i className="fab fa-instagram text-pink-500 mr-3"></i>
+          <FaInstagram className="fab fa-instagram text-pink-500 mr-3"/>
           Análise do Instagram
         </h2>
         <p className="text-gray-400">Métricas detalhadas do perfil @baixioturismo</p>
