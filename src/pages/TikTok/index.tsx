@@ -3,17 +3,10 @@ import { FaUsers, FaPlay, FaHeart, FaShare, FaTiktok } from "react-icons/fa";
 
 // import PerformanceChart from "@/components/TikTok/PerformanceChart";
 import MetricCard from "@/components/Instagram/MetricCard";
-import TopVideos, { type Video } from "@/components/TikTok/TopVideos";
-import HashtagTrends, { type HashtagData } from "@/components/TikTok/HashtagTrands";
-export interface Metric {
-  title: string;
-  value: string;
-  change: string;
-  icon: React.ReactNode;
-  bgIcon: string;
-  borderColor: string;
-  changeColor: string;
-}
+import TopVideos from "@/components/TikTok/TopVideos";
+import HashtagTrends from "@/components/TikTok/HashtagTrands";
+import type { HashtagData, Metric, Video } from "@/types/tiktok";
+
 
 const metrics: Metric[] = [
   {
@@ -97,7 +90,7 @@ const hashtagData: HashtagData = {
 
 const TikTokAnalytics: React.FC = () => {
   return (
-    <section className="section max-w-6xl mx-auto mt-6">
+    <section className="section max-w-6xl mx-auto px-2 mt-6">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
           <FaTiktok color="#f2f2f2" className="mr-3" />

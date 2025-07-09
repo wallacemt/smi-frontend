@@ -1,16 +1,6 @@
+import type { HashtagData } from "@/types/tiktok";
 import React from "react";
-export interface Trend {
-  name: string;
-  growth: string;
-}
-export interface HashtagData {
-  popular: string[];
-  trends: Trend[];
-  bestTimes: {
-    time: string;
-    percent: number;
-  }[];
-}
+
 interface Props {
   data: HashtagData;
 }

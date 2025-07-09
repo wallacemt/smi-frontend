@@ -103,7 +103,7 @@ const FacebookAnalytics: React.FC = () => {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto mt-6">
+    <section className="section max-w-6xl mx-auto px-2 mt-6">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
           <FaFacebook className="fab fa-facebook text-blue-600 mr-3" />

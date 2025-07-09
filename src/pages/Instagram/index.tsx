@@ -83,7 +83,7 @@ export default function InstagramAnalytics() {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto mt-6">
+    <section className="section max-w-6xl mx-auto mt-6 px-2">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
           <FaInstagram className="fab fa-instagram text-pink-500 mr-3"/>

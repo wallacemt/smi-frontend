@@ -28,7 +28,7 @@ const Header = () => {
     { title: "Facebook", icon: <FaFacebook size={20} className="mr-2" />, path: "/facebook" },
     { title: "TikTok", icon: <FaTiktok size={20} className="mr-2" />, path: "/tiktok" },
     { title: "YouTube", icon: <FaYoutube size={20} className="mr-2" />, path: "/youtube" },
-    { title: "Relatórios", icon: <BarChart size={20} className="mr-2" />, path: "/relatorios" },
+    { title: "Relatórios", icon: <BarChart size={20} className="mr-2" />, path: "/reports" },
   ];
 
   return (

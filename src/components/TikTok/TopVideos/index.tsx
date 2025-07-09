@@ -1,12 +1,5 @@
+import type { Video } from "@/types/tiktok";
 import React from "react";
-export interface Video {
-  title: string;
-  description: string;
-  views: string;
-  likes: string;
-  shares: string;
-  iconBg: string;
-}
 interface Props {
   videos: Video[];
 }

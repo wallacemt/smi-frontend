@@ -8,6 +8,8 @@ import { ErorNotFound } from "./pages/Error/404";
 import InstagramAnalytics from "./pages/Instagram";
 import FacebookAnalytics from "./pages/Facebook";
 import TikTokAnalytics from "./pages/TikTok";
+import YouTubeAnalytics from "./pages/Youtube";
+import RelatorioMarketing from "./pages/Report";
 
 export default function AppRouter() {
   return (
@@ -50,6 +52,22 @@ export default function AppRouter() {
           element={
             <Layout>
               <TikTokAnalytics />
+            </Layout>
+          }
+        />
+        <Route
+          path="/youtube"
+          element={
+            <Layout>
+              <YouTubeAnalytics />
+            </Layout>
+          }
+        />
+        <Route
+          path="/reports"
+          element={
+            <Layout>
+              <RelatorioMarketing />
             </Layout>
           }
         />
