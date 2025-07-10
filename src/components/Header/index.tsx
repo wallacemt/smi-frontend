@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Bell, ChevronDown, Search, User, Settings, LogOut, BarChart, Home, Menu, X } from "lucide-react";
-import { FaFacebook, FaInstagram, FaRobot, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaFacebook, FaInstagram, FaPerson, FaRobot, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { Link, useLocation } from "react-router";
 
 const Header = () => {
@@ -28,6 +28,7 @@ const Header = () => {
     { title: "Facebook", icon: <FaFacebook size={20} className="mr-2" />, path: "/facebook" },
     { title: "TikTok", icon: <FaTiktok size={20} className="mr-2" />, path: "/tiktok" },
     { title: "YouTube", icon: <FaYoutube size={20} className="mr-2" />, path: "/youtube" },
+     { title: "Personas", icon: <FaPerson size={20} className="mr-2" />, path: "/people" },
     { title: "Relatórios", icon: <BarChart size={20} className="mr-2" />, path: "/reports" },
   ];
 

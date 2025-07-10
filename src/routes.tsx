@@ -10,6 +10,7 @@ import FacebookAnalytics from "./pages/Facebook";
 import TikTokAnalytics from "./pages/TikTok";
 import YouTubeAnalytics from "./pages/Youtube";
 import RelatorioMarketing from "./pages/Report";
+import PersonaGenerator from "./pages/PeopleGenerator";
 
 export default function AppRouter() {
   return (
@@ -68,6 +69,14 @@ export default function AppRouter() {
           element={
             <Layout>
               <RelatorioMarketing />
+            </Layout>
+          }
+        />
+        <Route
+          path="/people"
+          element={
+            <Layout>
+              <PersonaGenerator />
             </Layout>
           }
         />
