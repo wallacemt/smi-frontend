@@ -94,6 +94,7 @@ export default function Dashboard() {
     <section
       id="dashboard"
       className="transition-opacity max-w-6xl mx-auto flex flex-col gap-4 duration-300 ease-in-out px-4 font-principal"
+      style={{ userSelect: "none" }}
     >
       <div>
         <SiteHeader title="Dashboard de Redes Sociais" />

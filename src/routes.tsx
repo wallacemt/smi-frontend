@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import { Loading } from "./components/utils/Loading";
 import DashBoard from "./pages/Dashboard";
 import Layout from "./layout";
@@ -10,76 +10,99 @@ import FacebookAnalytics from "./pages/Facebook";
 import TikTokAnalytics from "./pages/TikTok";
 import YouTubeAnalytics from "./pages/Youtube";
 import RelatorioMarketing from "./pages/Report";
-import PersonaGenerator from "./pages/PeopleGenerator";
-
+import Persona from "./pages/Pepple";
+import { useUserContext } from "./contexts/UserContext";
+import { Login } from "./pages/Auth/Login";
+const PrivateRoutes = ({ children }: any) => {
+  const { user } = useUserContext();
+  if (!user) return <Navigate to="/" />;
+  return children;
+};
 export default function AppRouter() {
+  const { user, loading } = useUserContext();
+  const privateRoutes = [
+    {
+      path: "/ai-analyzer",
+      element: (
+        <Layout>
+          <AiAnalyzer />
+        </Layout>
+      ),
+    },
+    {
+      path: "/instagram",
+      element: (
+        <Layout>
+          <InstagramAnalytics />
+        </Layout>
+      ),
+    },
+    {
+      path: "/facebook",
+      element: (
+        <Layout>
+          <FacebookAnalytics />
+        </Layout>
+      ),
+    },
+    {
+      path: "/tiktok",
+      element: (
+        <Layout>
+          <TikTokAnalytics />
+        </Layout>
+      ),
+    },
+    {
+      path: "/youtube",
+      element: (
+        <Layout>
+          <YouTubeAnalytics />
+        </Layout>
+      ),
+    },
+    {
+      path: "/reports",
+      element: (
+        <Layout>
+          <RelatorioMarketing />
+        </Layout>
+      ),
+    },
+    {
+      path: "/people",
+      element: (
+        <Layout>
+          <Persona />
+        </Layout>
+      ),
+    },
+  ];
+
+  if (loading) {
+    return (
+      <div className="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex flex-col items-center justify-center">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-900" />
+        <p className="text-white font-principal">Carregando...</p>
+      </div>
+    );
+  }
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
         <Route
           path="/"
           element={
-            <Layout>
-              <DashBoard />
-            </Layout>
+            user ? (
+              <Layout>
+                <DashBoard />
+              </Layout>
+            ) : (
+              <Login />
+            )
           }
         />
-        <Route
-          path="/ai-analyzer"
-          element={
-            <Layout>
-              <AiAnalyzer />
-            </Layout>
-          }
-        />
-        <Route
-          path="/instagram"
-          element={
-            <Layout>
-              <InstagramAnalytics />
-            </Layout>
-          }
-        />
-        <Route
-          path="/facebook"
-          element={
-            <Layout>
-              <FacebookAnalytics />
-            </Layout>
-          }
-        />
-        <Route
-          path="/tiktok"
-          element={
-            <Layout>
-              <TikTokAnalytics />
-            </Layout>
-          }
-        />
-        <Route
-          path="/youtube"
-          element={
-            <Layout>
-              <YouTubeAnalytics />
-            </Layout>
-          }
-        />
-        <Route
-          path="/reports"
-          element={
-            <Layout>
-              <RelatorioMarketing />
-            </Layout>
-          }
-        />
-        <Route
-          path="/people"
-          element={
-            <Layout>
-              <PersonaGenerator />
-            </Layout>
-          }
-        />
+        <Route path="/sign-in" element={user ? <Navigate to="/dashboard" /> : <Login />} />
         <Route
           path="*"
           element={
@@ -88,6 +111,9 @@ export default function AppRouter() {
             </Layout>
           }
         />
+        {privateRoutes.map((route) => (
+          <Route key={route.path} path={route.path} element={<PrivateRoutes>{route.element}</PrivateRoutes>} />
+        ))}
       </Routes>
     </Suspense>
   );

@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Loader2, UserPlus, Send } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { SiteHeader } from "@/components/ui/site-header";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { PersonaOverview } from "@/components/Personas/PersonaOverview";
 
 interface Persona {
   nome: string;
@@ -9,7 +12,7 @@ interface Persona {
   motivacoes: string;
 }
 
-export default function PersonaGenerator() {
+export default function Persona() {
   const [personas, setPersonas] = useState<Persona[]>([]);
   const [loading, setLoading] = useState(false);
   const [selectedPersona, setSelectedPersona] = useState<Persona | null>(null);
@@ -57,10 +60,10 @@ export default function PersonaGenerator() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-8 text-white">
-      <h1 className="text-2xl font-semibold">Geração de Personas</h1>
-
-      <button
+    <div className="mx-auto  space-y-8 text-white">
+      <SiteHeader title="Gerenciamento de Personas" icon={<FaPeopleGroup />} />
+      <PersonaOverview />
+      {/* <button
         onClick={generatePersonas}
         className="flex items-center gap-2 mx-auto bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition disabled:opacity-50"
         disabled={loading}
@@ -112,7 +115,7 @@ export default function PersonaGenerator() {
             </div>
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 }
