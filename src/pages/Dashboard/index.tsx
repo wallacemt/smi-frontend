@@ -1,5 +1,6 @@
 import { PlatformCard } from "@/components/DashBoard/PlatformCard";
 import { SummaryCard } from "@/components/DashBoard/SumaryCard";
+import { SiteHeader } from "@/components/ui/site-header";
 import { Users, Camera, Eye, Heart } from "lucide-react";
 import { FaInstagram, FaFacebook, FaTiktok, FaYoutube } from "react-icons/fa";
 
@@ -90,10 +91,13 @@ export default function Dashboard() {
     },
   ];
   return (
-    <section id="dashboard" className="transition-opacity max-w-6xl mx-auto flex flex-col gap-4 duration-300 ease-in-out px-4 font-principal">
-      <div className="mb-6 mt-8">
-        <h2 className="text-2xl font-bold text-white mb-2">Dashboard de Redes Sociais</h2>
-        <p className="text-gray-400">Análise completa do desempenho nas principais plataformas sociais</p>
+    <section
+      id="dashboard"
+      className="transition-opacity max-w-6xl mx-auto flex flex-col gap-4 duration-300 ease-in-out px-4 font-principal"
+    >
+      <div>
+        <SiteHeader title="Dashboard de Redes Sociais" />
+        <p className="text-gray-400 mt-2">Análise completa do desempenho nas principais plataformas sociais</p>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 mb-6">
         {summaryData.map((item, idx) => (

@@ -1,8 +1,10 @@
 import BestTimeRow from "@/components/Instagram/BestTimeRow";
+
 // import ChartCard from "@/components/Instagram/ChartCard";
 import HashtagBadge from "@/components/Instagram/HashtagBadge";
 import MetricCard from "@/components/Instagram/MetricCard";
 import TopPostCard from "@/components/Instagram/TopPostCard";
+import { SiteHeader } from "@/components/ui/site-header";
 import { Camera, Image, VideoIcon } from "lucide-react";
 import { FaEye, FaHeart, FaInstagram, FaPlayCircle, FaUser } from "react-icons/fa";
 
@@ -83,51 +85,52 @@ export default function InstagramAnalytics() {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto mt-6 px-2">
+    <section className="section max-w-6xl mx-auto px-2">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
-          <FaInstagram className="fab fa-instagram text-pink-500 mr-3"/>
-          Análise do Instagram
-        </h2>
-        <p className="text-gray-400">Métricas detalhadas do perfil @baixioturismo</p>
+        <SiteHeader
+          title="Análise do Instagram"
+          icon={<FaInstagram className="fab fa-instagram text-pink-500 mr-3" />}
+        />
+        <p className="text-gray-400 ml-12">Métricas detalhadas do perfil @baixioturismo</p>
       </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        {metrics.map((metric, index) => (
-          <MetricCard key={index} {...metric} />
-        ))}
-      </div>
-
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <ChartCard title="Crescimento de Seguidores" chartId="instagramFollowersChart" />
-        <ChartCard title="Engajamento por Tipo de Post" chartId="instagramEngagementChart" />
-      </div> */}
-
-      <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 mb-6">
-        <h3 className="text-lg font-bold text-white mb-4">Posts com Melhor Performance</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {posts.map((post, index) => (
-            <TopPostCard key={index} {...post} />
+      <div className="p-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          {metrics.map((metric, index) => (
+            <MetricCard key={index} {...metric} />
           ))}
         </div>
-      </div>
+{/* 
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <ChartCard title="Crescimento de Seguidores" chartId="instagramFollowersChart" />
+          <ChartCard title="Engajamento por Tipo de Post" chartId="instagramEngagementChart" />
+        </div> */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-bold text-white mb-4">Top Hashtags</h3>
-          <div className="flex flex-wrap gap-2">
-            {hashtags.map((tag, index) => (
-              <HashtagBadge key={index} tag={tag} />
+        <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700 mb-6">
+          <h3 className="text-lg font-bold text-white mb-4">Posts com Melhor Performance</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {posts.map((post, index) => (
+              <TopPostCard key={index} {...post} />
             ))}
           </div>
         </div>
 
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-bold text-white mb-4">Melhores Horários</h3>
-          <div className="space-y-3">
-            {bestTimes.map((time, index) => (
-              <BestTimeRow key={index} {...time} />
-            ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+            <h3 className="text-lg font-bold text-white mb-4">Top Hashtags</h3>
+            <div className="flex flex-wrap gap-2">
+              {hashtags.map((tag, index) => (
+                <HashtagBadge key={index} tag={tag} />
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+            <h3 className="text-lg font-bold text-white mb-4">Melhores Horários</h3>
+            <div className="space-y-3">
+              {bestTimes.map((time, index) => (
+                <BestTimeRow key={index} {...time} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

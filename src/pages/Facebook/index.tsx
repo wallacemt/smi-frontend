@@ -5,6 +5,7 @@ import { FaThumbsUp, FaEye, FaHeart, FaShare, FaFacebook } from "react-icons/fa"
 import MetricCard from "@/components/Instagram/MetricCard";
 import PostCard from "@/components/Facebook/PostCard";
 import EventCard from "@/components/Facebook/EventCard";
+import { SiteHeader } from "@/components/ui/site-header";
 
 const FacebookAnalytics: React.FC = () => {
   const metrics = [
@@ -70,7 +71,7 @@ const FacebookAnalytics: React.FC = () => {
       comments: 34,
       shares: 12,
     },
-     {
+    {
       text: "Dicas para suas férias 🏨",
       likes: "890",
       comments: 34,
@@ -103,42 +104,39 @@ const FacebookAnalytics: React.FC = () => {
   ];
 
   return (
-    <section className="section max-w-6xl mx-auto px-2 mt-6">
+    <section className="section max-w-6xl mx-auto px-2">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
-          <FaFacebook className="fab fa-facebook text-blue-600 mr-3" />
-          Análise do Facebook
-        </h2>
-        <p className="text-gray-400">Métricas da página BaixioTurismo</p>
+        <SiteHeader title="Análise do Facebook" icon={<FaFacebook className="fab fa-facebook text-blue-600 mr-3" />} />
+        <h2 className="text-2xl font-bold text-white mb-2 flex items-center"></h2>
+        <p className="text-gray-400 ml-12">Métricas da página BaixioTurismo</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        {metrics.map((metric, index) => (
-          <MetricCard key={index} {...metric} />
-        ))}
-      </div>
-
-      {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <ChartCard title="Alcance vs Engajamento" chartId="facebookReachChart" />
-        <ChartCard title="Demografia da Audiência" chartId="facebookDemographicsChart" />
-      </div> */}
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-bold text-white mb-4">Posts Recentes</h3>
-          <div className="space-y-4">
-            {posts.map((post, index) => (
-              <PostCard key={index} {...post} />
-            ))}
-          </div>
+      <div className="p-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          {metrics.map((metric, index) => (
+            <MetricCard key={index} {...metric} />
+          ))}
         </div>
-
-        <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
-          <h3 className="text-lg font-bold text-white mb-4">Eventos Próximos</h3>
-          <div className="space-y-4">
-            {events.map((event, index) => (
-              <EventCard key={index} {...event} />
-            ))}
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <ChartCard title="Alcance vs Engajamento" chartId="facebookReachChart" />
+          <ChartCard title="Demografia da Audiência" chartId="facebookDemographicsChart" />
+        </div> */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+            <h3 className="text-lg font-bold text-white mb-4">Posts Recentes</h3>
+            <div className="space-y-4">
+              {posts.map((post, index) => (
+                <PostCard key={index} {...post} />
+              ))}
+            </div>
+          </div>
+          <div className="bg-gray-800 rounded-lg shadow-lg p-6 border border-gray-700">
+            <h3 className="text-lg font-bold text-white mb-4">Eventos Próximos</h3>
+            <div className="space-y-4">
+              {events.map((event, index) => (
+                <EventCard key={index} {...event} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

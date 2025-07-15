@@ -58,7 +58,7 @@ export default function PersonaGenerator() {
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8 text-white">
-      <h1 className="text-2xl font-semibold">Geração de Personas & Postagens</h1>
+      <h1 className="text-2xl font-semibold">Geração de Personas</h1>
 
       <button
         onClick={generatePersonas}

@@ -6,7 +6,7 @@ import MetricCard from "@/components/Instagram/MetricCard";
 import TopVideos from "@/components/TikTok/TopVideos";
 import HashtagTrends from "@/components/TikTok/HashtagTrands";
 import type { HashtagData, Metric, Video } from "@/types/tiktok";
-
+import { SiteHeader } from "@/components/ui/site-header";
 
 const metrics: Metric[] = [
   {
@@ -90,29 +90,27 @@ const hashtagData: HashtagData = {
 
 const TikTokAnalytics: React.FC = () => {
   return (
-    <section className="section max-w-6xl mx-auto px-2 mt-6">
+    <section className="section max-w-6xl mx-auto px-2">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2 flex items-center">
-          <FaTiktok color="#f2f2f2" className="mr-3" />
-          Análise do TikTok
-        </h2>
-        <p className="text-gray-400">Métricas do perfil @baixioturismo</p>
+        <SiteHeader title="Análise do TikTok" icon={<FaTiktok color="#f2f2f2" className="mr-3" />} />
+        <h2 className="text-2xl font-bold text-white mb-2 flex items-center"></h2>
+        <p className="text-gray-400 ml-12">Métricas do perfil @baixioturismo</p>
       </div>
 
-      {/* Métricas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
-        {metrics.map((metric, idx) => (
-          <MetricCard key={idx} {...metric} />
-        ))}
+      <div className="p-2">
+        {/* Métricas */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+          {metrics.map((metric, idx) => (
+            <MetricCard key={idx} {...metric} />
+          ))}
+        </div>
+        {/* Vídeos e Tendências */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <TopVideos videos={topVideos} />
+          <HashtagTrends data={hashtagData} />
+        </div>
       </div>
 
-      {/* Vídeos e Tendências */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
-        <TopVideos videos={topVideos} />
-        <HashtagTrends data={hashtagData} />
-      </div>
-
-      {/* <PerformanceChart /> */}
     </section>
   );
 };
