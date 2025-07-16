@@ -10,9 +10,11 @@ import FacebookAnalytics from "./pages/Facebook";
 import TikTokAnalytics from "./pages/TikTok";
 import YouTubeAnalytics from "./pages/Youtube";
 import RelatorioMarketing from "./pages/Report";
-import Persona from "./pages/Pepple";
+import Persona from "./pages/Personas";
 import { useUserContext } from "./contexts/UserContext";
 import { Login } from "./pages/Auth/Login";
+import { PostHistory } from "./pages/PostHistory";
+import { PostGenerate } from "./pages/PostGenerate";
 const PrivateRoutes = ({ children }: any) => {
   const { user } = useUserContext();
   if (!user) return <Navigate to="/" />;
@@ -23,59 +25,43 @@ export default function AppRouter() {
   const privateRoutes = [
     {
       path: "/ai-analyzer",
-      element: (
-        <Layout>
-          <AiAnalyzer />
-        </Layout>
-      ),
+      element: <AiAnalyzer />,
     },
     {
       path: "/instagram",
-      element: (
-        <Layout>
-          <InstagramAnalytics />
-        </Layout>
-      ),
+      element: <InstagramAnalytics />,
     },
     {
       path: "/facebook",
-      element: (
-        <Layout>
-          <FacebookAnalytics />
-        </Layout>
-      ),
+      element: <FacebookAnalytics />,
     },
     {
       path: "/tiktok",
-      element: (
-        <Layout>
-          <TikTokAnalytics />
-        </Layout>
-      ),
+      element: <TikTokAnalytics />,
     },
     {
       path: "/youtube",
-      element: (
-        <Layout>
-          <YouTubeAnalytics />
-        </Layout>
-      ),
+      element: <YouTubeAnalytics />,
     },
     {
       path: "/reports",
-      element: (
-        <Layout>
-          <RelatorioMarketing />
-        </Layout>
-      ),
+      element: <RelatorioMarketing />,
     },
     {
-      path: "/people",
-      element: (
-        <Layout>
-          <Persona />
-        </Layout>
-      ),
+      path: "/personas",
+      element: <Persona />,
+    },
+    {
+      path: "/post/history",
+      element: <PostHistory />,
+    },
+    {
+      path: "/post/history/persona/:id",
+      element: <PostHistory />,
+    },
+    {
+      path: "/post/generate",
+      element: <PostGenerate />,
     },
   ];
 
@@ -90,6 +76,7 @@ export default function AppRouter() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
+        
         <Route
           path="/"
           element={
@@ -112,7 +99,15 @@ export default function AppRouter() {
           }
         />
         {privateRoutes.map((route) => (
-          <Route key={route.path} path={route.path} element={<PrivateRoutes>{route.element}</PrivateRoutes>} />
+          <Route
+            key={route.path}
+            path={route.path}
+            element={
+              <PrivateRoutes>
+                <Layout>{route.element}</Layout>
+              </PrivateRoutes>
+            }
+          />
         ))}
       </Routes>
     </Suspense>

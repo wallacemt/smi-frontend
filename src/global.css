@@ -381,3 +381,17 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #ffcb70;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transition: all 0.3s ease;
+}

@@ -41,17 +41,17 @@ const data = {
         },
         {
           title: "Gerar Post",
-          url: "#",
+          url: "/post/generate",
           icon: RiAiGenerate2,
         },
         {
           title: "Historico de Posts",
-          url: "#",
+          url: "/post/history",
           icon: History,
         },
         {
           title: "Personas",
-          url: "/people",
+          url: "/personas",
           icon: FaPerson,
         },
       ],
@@ -119,7 +119,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <Link to={"/"} className={` ${open ? "flex" : "hidden"}  items-center`}>
-          <img src="./logo.png" alt="Logo" className="w-10 h-10  animate-pulse" />
+          <img src="/logo.png" alt="Logo" className="w-10 h-10  animate-pulse" />
           <h1 className="text-xl font-bold">
             Baixio Turismo <span className="font-bold text-xs absolute text-red-600">AI</span>
           </h1>
