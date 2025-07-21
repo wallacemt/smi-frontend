@@ -395,3 +395,23 @@ body {
   height: 3px;
   transition: all 0.3s ease;
 }
+
+/* Adicione um estilo customizado no seu arquivo CSS global */
+
+
+
+.fc-daygrid-day {
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.fc-daygrid-day:hover {
+  padding: 0;
+  background-color: var(--color-green-700);
+}
+
+.fc-daygrid-day-number {
+  color: #fff;
+}
+
+

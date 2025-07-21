@@ -14,8 +14,6 @@ import {
 import { FaFacebook, FaInstagram, FaPerson, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { IoMdAnalytics } from "react-icons/io";
 import { Link } from "react-router";
-
-// This is sample data.
 const data = {
   user: {
     name: "AI Manager",
@@ -53,6 +51,11 @@ const data = {
           title: "Personas",
           url: "/personas",
           icon: FaPerson,
+        },
+        {
+          title: "Post Agendados",
+          url: "/post/scheduled",
+          icon: Map,
         },
       ],
     },

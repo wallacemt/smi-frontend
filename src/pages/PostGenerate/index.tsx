@@ -12,7 +12,7 @@ import { postGeneratePostByPersona } from "@/api/ai";
 import { Wand } from "lucide-react";
 import { toast } from "sonner";
 
-export const PostGenerate = () => {
+export default function PostGenerate() {
   const [personaId, setPersonaId] = useState("");
   const [prompt, setPrompt] = useState("");
   const [loading, setLoading] = useState(false);

@@ -13,7 +13,7 @@ const paramSchema = z.object({
   id: z.string().uuid("ID inválido: deve ser um UUID válido."),
 });
 
-export function PostHistory() {
+export default function PostHistory() {
   const { id } = useParams<{ id?: string }>();
   const [posts, setPosts] = useState<PostsByPersonas[] | null>(null);
   const [persona, setPersona] = useState<Persona | null>(null);
