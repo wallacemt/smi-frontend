@@ -10,7 +10,7 @@ interface CalendarFullProps {
 export const CalendarFull = ({ posts }: CalendarFullProps) => {
   const events = posts?.map((post) => ({
     title: post.post.title,
-    date: post.date,
+    date: new Date(post.date).toISOString().split("T")[0],
     time: post.time,
   }));
 

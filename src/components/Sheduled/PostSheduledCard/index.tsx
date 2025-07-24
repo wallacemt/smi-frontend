@@ -52,7 +52,7 @@ export const PostSheduledCard = ({ post, date, time }: PostSheduledCardProps) =>
               Postagem agendada para:
             </h3>
             <div className="flex flex-wrap gap-2">
-              <Badge variant="secondary">{new Date(date).toLocaleDateString()}</Badge>
+              <Badge variant="secondary">{date.split("T")[0].split("-").reverse().join("/")}</Badge>
               <Badge variant="secondary">{time}</Badge>
             </div>
           </div>
