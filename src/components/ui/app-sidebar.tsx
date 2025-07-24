@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Bot, Frame, Gauge, History, Map, PieChart, Settings2, Signature, SquareActivity } from "lucide-react";
+import { Bot, CalendarArrowUp, CalendarCheck, Frame, Gauge, History, PieChart, Settings2, Signature, SquareActivity } from "lucide-react";
 import { RiAiGenerate2 } from "react-icons/ri";
 import { NavMain } from "@/components/ui/nav-main";
 import { NavUser } from "@/components/ui/nav-user";
@@ -52,10 +52,15 @@ const data = {
           url: "/personas",
           icon: FaPerson,
         },
-        {
+         {
           title: "Post Agendados",
           url: "/post/scheduled",
-          icon: Map,
+          icon: CalendarArrowUp,
+        },
+        {
+          title: "Calendario de Posts",
+          url: "/post/scheduled/calendar",
+          icon: CalendarCheck,
         },
       ],
     },

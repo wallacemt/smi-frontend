@@ -4,7 +4,6 @@ import { type Persona, type PostsByPersonas } from "@/types/aiTypes";
 import { PostCard } from "@/components/Posts/PostCard";
 import { PostCardSkeleton } from "@/components/Posts/PostCard/skeleton";
 import { SiteHeader } from "@/components/ui/site-header";
-import { Separator } from "@/components/ui/separator";
 import { useParams } from "react-router";
 import { z } from "zod";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -89,10 +88,9 @@ export default function PostHistory() {
           {loading ? (
             Array.from({ length: 3 }).map((_, i) => <PostCardSkeleton key={i} />)
           ) : posts && posts.length > 0 ? (
-            posts.map((post, index) => (
+            posts.map((post) => (
               <div key={post.id}>
                 <PostCard post={post} />
-                {index !== posts.length - 1 && <Separator className="bg-zinc-700" />}
               </div>
             ))
           ) : (

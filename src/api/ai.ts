@@ -82,3 +82,15 @@ export const deletePersonaById = async (personaId: string): Promise<SimpleRespon
     throw error;
   }
 };
+
+
+export const getPostById = async (postId: string): Promise<PostsByPersonas> => {
+  try {
+    handleToken(aiApi);
+    const res = await aiApi.get<PostsByPersonas>(`/posts/${postId}`);
+    return res.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};

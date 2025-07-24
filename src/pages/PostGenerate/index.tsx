@@ -11,6 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import { postGeneratePostByPersona } from "@/api/ai";
 import { Wand } from "lucide-react";
 import { toast } from "sonner";
+import { PostTypeChoose } from "@/components/Posts/PostTypeGenerate";
 
 export default function PostGenerate() {
   const [personaId, setPersonaId] = useState("");
@@ -44,6 +45,7 @@ export default function PostGenerate() {
         <form className="space-y-4  p-2 border rounded-2xl border-zinc-600" onSubmit={handleSubmit}>
           <PersonaSelect selectedId={personaId} onSelect={setPersonaId} loading={loading} />
           <PromptInput prompt={prompt} onChange={setPrompt} loading={loading} />
+          <PostTypeChoose selectedType="image" onSelect={() => {}} loading={loading} />
           <Button
             type="submit"
             className="w-full bg-[var(--khaki-1800)] hover:bg-[var(--khaki-1700)] cursor-pointer disabled:cursor-not-allowed"

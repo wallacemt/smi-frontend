@@ -16,6 +16,8 @@ const RelatorioMarketing = lazy(() => import("./pages/Report"));
 const Persona = lazy(() => import("./pages/Personas"));
 const PostHistory = lazy(() => import("./pages/PostHistory"));
 const PostGenerate = lazy(() => import("./pages/PostGenerate"));
+const ShedulePostCalendar = lazy(() => import("./pages/ShedulePostCalendar"));
+const ShedulePostCreate = lazy(() => import("./pages/ShedulePostCreate"));
 const ShedulePost = lazy(() => import("./pages/ShedulePost"));
 
 const PrivateRoutes = ({ children }: any) => {
@@ -38,6 +40,8 @@ export default function AppRouter() {
     { path: "/post/history/persona/:id", element: <PostHistory /> },
     { path: "/post/generate", element: <PostGenerate /> },
     { path: "/post/scheduled", element: <ShedulePost /> },
+    { path: "/post/scheduled/calendar", element: <ShedulePostCalendar /> },
+    { path: "/post/:id/scheduled", element: <ShedulePostCreate /> },
   ];
 
   if (loading) {
@@ -48,7 +52,7 @@ export default function AppRouter() {
       </div>
     );
   }
-  
+
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
@@ -88,4 +92,3 @@ export default function AppRouter() {
     </Suspense>
   );
 }
-

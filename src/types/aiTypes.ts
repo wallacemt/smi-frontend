@@ -7,6 +7,11 @@ export interface PostsByPersonas {
   hashtags: string[];
   createdAt: Date;
 }
+export interface PostSheduled {
+  post: PostsByPersonas;
+  date: string;
+  time: string;
+}
 export interface Persona {
   id: string;
   title: string;
@@ -29,4 +34,3 @@ export interface Persona {
   createdAt: Date;
   postsByPersonas: PostsByPersonas[];
 }
-
